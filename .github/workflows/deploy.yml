@@ -19,4 +19,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy
-        run: npm run deploy
+        run: |
+          git config --global user.email "luis@devnido.io"
+          git config --global user.name "Luis Alamos"
+          npm run deploy
