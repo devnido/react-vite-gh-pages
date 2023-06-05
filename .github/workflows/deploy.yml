@@ -6,20 +6,20 @@ on:
       - "main"
 
 jobs:
-  deploy:
+  build-and-deploy:
+    name: Build and deploy
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Install dependencies
         run: npm install
-      - name: Build
-        run: npm run build
+
       - name: Deploy
         run: |
           git config --global user.email "luis@devnido.io"
           git config --global user.name "Luis Alamos"
+          git remote set-url origin https://x-access-token:${{ secrets.DEPLOY_GH_PAGES }}@github.com/${{ github.repository }} 
           npm run deploy
