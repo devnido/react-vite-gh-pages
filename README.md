@@ -88,4 +88,12 @@ jobs:
 
 ![Settings](/public/permissions-2.png)
 
-## Eso es todo :v:
+## Configurar Github Pages
+
+1. Abrir la pestaña settings del proyecto luego hacer click en **Pages**.
+2. En la sección **Source** selecciona **gh-pages branch** y **root**.
+3. Por ultimo haz click en **Save**.
+
+![Github Pages](/public/github-pages-config.png)
+
+# Eso es todo :v:
